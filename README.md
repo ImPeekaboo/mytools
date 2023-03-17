@@ -1,3 +1,2 @@
-# projectcobacoba
-
-# this game code i found from google search 
+# Game Code
+So, these code i found from google
