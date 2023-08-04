@@ -178,3 +178,21 @@ def installLT():
     print('Libtorrent is Installed!')
     time.sleep(2)
     clear_output()
+
+def installLX():
+    from IPython.display import clear_output
+    import time, os
+    
+    delete_path = '/content/sample_data'
+    if os.path.exists(delete_path):
+        runSh('rm -rf "/content/sample_data"')
+
+    loadingAn()
+    textAn('Installing Libtorrentx...')
+    runSh('git clone https://github.com/imneonizer/libtorrentx')
+    runSh('cd libtorrentx && pip install .')
+    runSh('rm -rf libtorrentx')
+    clear_output()
+    print('Libtorrentx is Installed!')
+    time.sleep(2)
+    clear_output()
