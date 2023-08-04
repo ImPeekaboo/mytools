@@ -191,7 +191,7 @@ def installLX():
     textAn('Installing Libtorrentx...')
     runSh('git clone https://github.com/imneonizer/libtorrentx')
     runSh('cd libtorrentx && pip install .')
-    runSh('rm -rf libtorrentx')
+    runSh('rm -rf /content/libtorrentx')
     clear_output()
     print('Libtorrentx is Installed!')
     time.sleep(2)
