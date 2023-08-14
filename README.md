@@ -1,7 +1,7 @@
 
 
 # Colab Tool's Code
-So, these tools are like kinda file downloader and manager for cloud storage on google colab, with a little bit customisation for me to easy use. Need rclone config to use these tools.
+So, this tool is like kinda file downloader and archiver on google colab. There is rclone too, so, you can transfer your files from colab directory to your cloud drive. Need rclone config to make transfer work.
 
 Open notebook here:
 <p align=center><a href="https://colab.research.google.com/github/ImPeekaboo/mytools/blob/main/peeklab.ipynb">
