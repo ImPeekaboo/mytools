@@ -151,7 +151,7 @@ def installMEGA():
         runSh('rm -rf "/content/sample_data"')
 
     loadingAn()
-    print("Installing MEGA...")
+    textAn("Installing MEGA...")
     runSh('sudo apt-get -y update')
     #runSh('sudo apt-get -y install libssl-dev libmms0 libc-ares2 libc6 libcrypto++6 libgcc1 libmediainfo0v5 libpcre3 libpcrecpp0v5 libssl1.1 libstdc++6 libzen0v5 zlib1g apt-transport-https')
     runSh('sudo curl -sL -o /var/cache/apt/archives/MEGAcmd.deb https://mega.nz/linux/repo/xUbuntu_22.04/amd64/megacmd_1.6.3-2.1_amd64.deb')
