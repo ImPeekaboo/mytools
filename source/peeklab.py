@@ -204,6 +204,7 @@ def installLT():
         time.sleep(2)
         clear_output()
 
+
 def installLX():
     import importlib
     
@@ -224,3 +225,30 @@ def installLX():
         print('Libtorrentx is Installed!')
         time.sleep(2)
         clear_output()
+
+
+def uploadComf():
+    from google.colab import files
+    from IPython.display import clear_output
+    import shutil, os, time
+
+    try:
+        os.makedirs("/root/.config/rclone", exist_ok=True)
+    except OSError as error:
+        pass
+
+    if os.path.exists('/root/.config/rclone/rclone.conf'):
+        print('rclone.conf already exist!')
+        time.sleep(1)
+        clear_output()
+    else:
+        uploaded = files.upload()
+        destination_directory = '/root/.config/rclone'
+
+        for filename in uploaded.keys():
+            shutil.move(filename, destination_directory + '/' + filename)
+            clear_output()
+            print(filename, 'success uploaded')
+
+    time.sleep(2)
+    clear_output()
