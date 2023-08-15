@@ -95,6 +95,8 @@ def installRclone():
         runSh('sudo apt-get -y install fuse3')
         clear_output()
         print('Rclone is Installed!')
+        time.sleep(2)
+        clear_output()
 
 
 def installRcloneB():
@@ -114,6 +116,8 @@ def installRcloneB():
         runSh('sudo apt-get -y install fuse3')
         clear_output()
         print('Rclone beta is Installed!')
+        time.sleep(2)
+        clear_output()
 
 
 def installGF():
