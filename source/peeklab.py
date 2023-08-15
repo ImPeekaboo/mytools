@@ -227,7 +227,7 @@ def installLX():
         clear_output()
 
 
-def uploadComf():
+def uploadConf():
     from google.colab import files
     from IPython.display import clear_output
     import shutil, os, time
