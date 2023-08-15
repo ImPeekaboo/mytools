@@ -50,149 +50,173 @@ def runSh(args, *, output=False, shell=True, cd=None):
 
 
 def setupYTA():
-    from IPython.display import clear_output
-    import os, time
+    import os
+    
+    if not os.path.exists("/usr/local/bin/ytarchive"):
+        from IPython.display import clear_output
+        import os, time
 
-    delete_path = '/content/sample_data'
-    if os.path.exists(delete_path):
-        runSh('rm -rf "/content/sample_data"')
+        delete_path = '/content/sample_data'
+        if os.path.exists(delete_path):
+            runSh('rm -rf "/content/sample_data"')
 
-    loadingAn()
-    textAn('Installing yta, yt-dlp, ffmpeg...')
-    runSh('cd /content')
-    runSh('wget https://www.johnvansickle.com/ffmpeg/old-releases/ffmpeg-5.1.1-amd64-static.tar.xz')
-    runSh('tar -xf ffmpeg-5.1.1-amd64-static.tar.xz')
-    runSh('cp ffmpeg-*-static/ffmpeg ffmpeg-*-static/ffprobe /usr/local/bin/')
-    runSh('rm ffmpeg-5.1.1-amd64-static.tar.xz')
-    runSh('rm -rf ffmpeg-*-static')
-    runSh('wget https://raw.githubusercontent.com/ImPeekaboo/mytools/main/source/ytarchive -O /usr/local/bin/ytarchive')
-    runSh('chmod +x /usr/local/bin/ytarchive')
-    runSh('pip install yt-dlp')
-    runSh('mkdir archive-result')
-    clear_output()
-    print('yta, yt-dlp, ffmpeg are Installed!')
-    time.sleep(2)
-    clear_output()
+        loadingAn()
+        textAn('Installing yta, yt-dlp, ffmpeg...')
+        runSh('cd /content')
+        runSh('wget https://www.johnvansickle.com/ffmpeg/old-releases/ffmpeg-5.1.1-amd64-static.tar.xz')
+        runSh('tar -xf ffmpeg-5.1.1-amd64-static.tar.xz')
+        runSh('cp ffmpeg-*-static/ffmpeg ffmpeg-*-static/ffprobe /usr/local/bin/')
+        runSh('rm ffmpeg-5.1.1-amd64-static.tar.xz')
+        runSh('rm -rf ffmpeg-*-static')
+        runSh('wget https://raw.githubusercontent.com/ImPeekaboo/mytools/main/source/ytarchive -O /usr/local/bin/ytarchive')
+        runSh('chmod +x /usr/local/bin/ytarchive')
+        runSh('pip install yt-dlp')
+        runSh('mkdir archive-result')
+        clear_output()
+        print('yta, yt-dlp, ffmpeg are Installed!')
+        time.sleep(2)
+        clear_output()
 
 
 def installRclone():
-    from IPython.display import clear_output
     import os
     
-    delete_path = '/content/sample_data'
-    if os.path.exists(delete_path):
-        runSh('rm -rf "/content/sample_data"')
+    if not os.path.exists("/usr/bin/rclone"):
+        from IPython.display import clear_output
+        import os, time
     
-    loadingAn()
-    textAn('Installing Rclone...')
-    runSh('curl https://rclone.org/install.sh | sudo bash')
-    runSh('sudo apt-get -y install fuse3')
-    clear_output()
-    print('Rclone is Installed!')
+        delete_path = '/content/sample_data'
+        if os.path.exists(delete_path):
+            runSh('rm -rf "/content/sample_data"')
+    
+        loadingAn()
+        textAn('Installing Rclone...')
+        runSh('curl https://rclone.org/install.sh | sudo bash')
+        runSh('sudo apt-get -y install fuse3')
+        clear_output()
+        print('Rclone is Installed!')
 
 
 def installRcloneB():
-    from IPython.display import clear_output
     import os
     
-    delete_path = '/content/sample_data'
-    if os.path.exists(delete_path):
-        runSh('rm -rf "/content/sample_data"')
+    if not os.path.exists("/usr/bin/rclone"):
+        from IPython.display import clear_output
+        import os, time
     
-    loadingAn()
-    textAn('Installing Rclone beta...')
-    runSh('curl https://rclone.org/install.sh | sudo bash -s beta')
-    runSh('sudo apt-get -y install fuse3')
-    clear_output()
-    print('Rclone beta is Installed!')
+        delete_path = '/content/sample_data'
+        if os.path.exists(delete_path):
+            runSh('rm -rf "/content/sample_data"')
+    
+        loadingAn()
+        textAn('Installing Rclone beta...')
+        runSh('curl https://rclone.org/install.sh | sudo bash -s beta')
+        runSh('sudo apt-get -y install fuse3')
+        clear_output()
+        print('Rclone beta is Installed!')
 
 
 def installGF():
-    from IPython.display import clear_output
-    import time, os
+    import os
     
-    delete_path = '/content/sample_data'
-    if os.path.exists(delete_path):
-        runSh('rm -rf "/content/sample_data"')
+    if not os.path.exists("/usr/local/bin/gofile"):
+        from IPython.display import clear_output
+        import time, os
+    
+        delete_path = '/content/sample_data'
+        if os.path.exists(delete_path):
+            runSh('rm -rf "/content/sample_data"')
 
-    loadingAn()
-    textAn('Installing Gofile...')
-    runSh('wget https://raw.githubusercontent.com/ImPeekaboo/mytools/main/source/gofile -O /usr/local/bin/gofile')
-    runSh('chmod +x /usr/local/bin/gofile')
-    clear_output()
-    print('Gofile is Installed!')
-    time.sleep(2)
-    clear_output()
+        loadingAn()
+        textAn('Installing Gofile...')
+        runSh('wget https://raw.githubusercontent.com/ImPeekaboo/mytools/main/source/gofile -O /usr/local/bin/gofile')
+        runSh('chmod +x /usr/local/bin/gofile')
+        clear_output()
+        print('Gofile is Installed!')
+        time.sleep(2)
+        clear_output()
 
 
 def installCD():
-    from IPython.display import clear_output
-    import time, os
+    import importlib
     
-    delete_path = '/content/sample_data'
-    if os.path.exists(delete_path):
-        runSh('rm -rf "/content/sample_data"')
+    if importlib.util.find_spec("cyberdrop_dl") is None:
+        from IPython.display import clear_output
+        import time, os
+    
+        delete_path = '/content/sample_data'
+        if os.path.exists(delete_path):
+            runSh('rm -rf "/content/sample_data"')
 
-    loadingAn()
-    textAn('Installing Cyberdrop-dl...')
-    runSh('pip install cyberdrop-dl')
-    clear_output
-    print('Cyberdrop-dl is Installed!')
-    time.sleep(2)
-    clear_output()
+        loadingAn()
+        textAn('Installing Cyberdrop-dl...')
+        runSh('pip install cyberdrop-dl')
+        clear_output()
+        print('Cyberdrop-dl is Installed!')
+        time.sleep(2)
+        clear_output()
 
 
 def installMEGA():
-    from IPython.display import clear_output
-    import time, os
+    import os
     
-    delete_path = '/content/sample_data'
-    if os.path.exists(delete_path):
-        runSh('rm -rf "/content/sample_data"')
+    if not os.path.exists("/usr/bin/mega-cmd"):
+        from IPython.display import clear_output
+        import time, os
+    
+        delete_path = '/content/sample_data'
+        if os.path.exists(delete_path):
+            runSh('rm -rf "/content/sample_data"')
 
-    loadingAn()
-    textAn("Installing MEGA...")
-    runSh('sudo apt-get -y update')
-    #runSh('sudo apt-get -y install libssl-dev libmms0 libc-ares2 libc6 libcrypto++6 libgcc1 libmediainfo0v5 libpcre3 libpcrecpp0v5 libssl1.1 libstdc++6 libzen0v5 zlib1g apt-transport-https')
-    runSh('sudo curl -sL -o /var/cache/apt/archives/MEGAcmd.deb https://mega.nz/linux/repo/xUbuntu_22.04/amd64/megacmd_1.6.3-2.1_amd64.deb')
-    runSh('sudo dpkg -i /var/cache/apt/archives/MEGAcmd.deb')
-    runSh('sudo apt --fix-broken install')
-    clear_output()
-    print("MEGA is Installed!")
-    time.sleep(2)
-    clear_output()
+        loadingAn()
+        textAn("Installing MEGA...")
+        runSh('sudo apt-get -y update')
+        #runSh('sudo apt-get -y install libssl-dev libmms0 libc-ares2 libc6 libcrypto++6 libgcc1 libmediainfo0v5 libpcre3 libpcrecpp0v5 libssl1.1 libstdc++6 libzen0v5 zlib1g apt-transport-https')
+        runSh('sudo curl -sL -o /var/cache/apt/archives/MEGAcmd.deb https://mega.nz/linux/repo/xUbuntu_22.04/amd64/megacmd_1.6.3-2.1_amd64.deb')
+        runSh('sudo dpkg -i /var/cache/apt/archives/MEGAcmd.deb')
+        runSh('sudo apt --fix-broken install')
+        clear_output()
+        print("MEGA is Installed!")
+        time.sleep(2)
+        clear_output()
 
 
 def installLT():
-    from IPython.display import clear_output
-    import time, os
+    import importlib
     
-    delete_path = '/content/sample_data'
-    if os.path.exists(delete_path):
-        runSh('rm -rf "/content/sample_data"')
+    if importlib.util.find_spec("libtorrent") is None:
+        from IPython.display import clear_output
+        import time, os
+    
+        delete_path = '/content/sample_data'
+        if os.path.exists(delete_path):
+            runSh('rm -rf "/content/sample_data"')
 
-    loadingAn()
-    textAn('Installing Libtorrent...')
-    runSh('pip install libtorrent')
-    clear_output()
-    print('Libtorrent is Installed!')
-    time.sleep(2)
-    clear_output()
+        loadingAn()
+        textAn('Installing Libtorrent...')
+        runSh('pip install libtorrent')
+        clear_output()
+        print('Libtorrent is Installed!')
+        time.sleep(2)
+        clear_output()
 
 def installLX():
-    from IPython.display import clear_output
-    import time, os
+    import importlib
     
-    delete_path = '/content/sample_data'
-    if os.path.exists(delete_path):
-        runSh('rm -rf "/content/sample_data"')
+    if importlib.util.find_spec("libtorrentx") is None:
+        from IPython.display import clear_output
+        import time, os
+    
+        delete_path = '/content/sample_data'
+        if os.path.exists(delete_path):
+            runSh('rm -rf "/content/sample_data"')
 
-    loadingAn()
-    textAn('Installing Libtorrentx...')
-    runSh('git clone https://github.com/imneonizer/libtorrentx')
-    runSh('cd libtorrentx && pip install .')
-    runSh('rm -rf /content/libtorrentx')
-    clear_output()
-    print('Libtorrentx is Installed!')
-    time.sleep(2)
-    clear_output()
+        loadingAn()
+        textAn('Installing Libtorrentx...')
+        runSh('git clone https://github.com/imneonizer/libtorrentx')
+        runSh('cd libtorrentx && pip install .')
+        runSh('rm -rf /content/libtorrentx')
+        clear_output()
+        print('Libtorrentx is Installed!')
+        time.sleep(2)
+        clear_output()
