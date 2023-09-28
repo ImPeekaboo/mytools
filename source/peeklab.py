@@ -94,6 +94,10 @@ def installRclone():
         runSh('curl https://rclone.org/install.sh | sudo bash')
         runSh('sudo apt-get -y install fuse3')
         clear_output()
+        try:
+            os.makedirs("/root/.config/rclone", exist_ok=True)
+        except OSError as error:
+            pass
         print('Rclone is Installed!')
         time.sleep(2)
         clear_output()
@@ -115,6 +119,10 @@ def installRcloneB():
         runSh('curl https://rclone.org/install.sh | sudo bash -s beta')
         runSh('sudo apt-get -y install fuse3')
         clear_output()
+        try:
+            os.makedirs("/root/.config/rclone", exist_ok=True)
+        except OSError as error:
+            pass
         print('Rclone beta is Installed!')
         time.sleep(2)
         clear_output()
