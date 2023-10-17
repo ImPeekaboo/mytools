@@ -127,6 +127,36 @@ def installRcloneB():
         time.sleep(2)
         clear_output()
 
+def installRcloneM():
+    import os
+    
+    if not os.path.exists("/usr/bin/rclone"):
+        from IPython.display import clear_output
+        import os, time
+    
+        delete_path = '/content/sample_data'
+        if os.path.exists(delete_path):
+            runSh('rm -rf "/content/sample_data"')
+    
+        loadingAn()
+        textAn('Installing Rclone Mod...')
+        runSh('wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz')
+        runSh('tar -xf go1.20.5.linux-amd64.tar.gz')
+        runSh('sudo mv go /usr/local')
+        runSh('rm go1.20.5.linux-amd64.tar.gz')
+        os.environ['PATH'] += ":/usr/local/go/bin"
+        runSh('git clone https://github.com/divyam234/rclone')
+        runSh('cd rclone && go build -o /usr/bin/rclone')
+        runSh('rm -rf rclone')
+        clear_output()
+        try:
+            os.makedirs("/root/.config/rclone", exist_ok=True)
+        except OSError as error:
+            pass
+        print('Rclone beta is Installed!')
+        time.sleep(2)
+        clear_output()
+
 
 def installGF():
     import os
