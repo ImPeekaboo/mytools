@@ -153,7 +153,7 @@ def installRcloneM():
             os.makedirs("/root/.config/rclone", exist_ok=True)
         except OSError as error:
             pass
-        print('Rclone beta is Installed!')
+        print('Rclone Mod is Installed!')
         time.sleep(2)
         clear_output()
 
