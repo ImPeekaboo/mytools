@@ -140,14 +140,18 @@ def installRcloneM():
     
         loadingAn()
         textAn('Installing Rclone Mod...')
-        runSh('wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz')
-        runSh('tar -xf go1.20.5.linux-amd64.tar.gz')
-        runSh('sudo mv go /usr/local')
-        runSh('rm go1.20.5.linux-amd64.tar.gz')
-        os.environ['PATH'] += ":/usr/local/go/bin"
-        runSh('git clone https://github.com/divyam234/rclone')
-        runSh('cd rclone && go build -o /usr/bin/rclone')
-        runSh('rm -rf rclone')
+        #runSh('wget https://go.dev/dl/go1.20.5.linux-amd64.tar.gz')
+        #runSh('tar -xf go1.20.5.linux-amd64.tar.gz')
+        #runSh('sudo mv go /usr/local')
+        #runSh('rm go1.20.5.linux-amd64.tar.gz')
+        #os.environ['PATH'] += ":/usr/local/go/bin"
+        #runSh('git clone https://github.com/divyam234/rclone')
+        #runSh('cd rclone && go build -o /usr/bin/rclone')
+        #runSh('rm -rf rclone')
+        runSh('wget https://github.com/divyam234/rclone/releases/latest/download/rclone-v1.64.0-linux-amd64.zip')
+        runSh('unzip -q rclone-v1.64.0-linux-amd64.zip')
+        runSh('rclone-v1.64.0-linux-amd64/rclone /usr/bin/ && chmod a+x /usr/bin/rclone')
+        runSh('rm -rf rclone-*')
         clear_output()
         try:
             os.makedirs("/root/.config/rclone", exist_ok=True)
