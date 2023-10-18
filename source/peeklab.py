@@ -284,7 +284,7 @@ def installGiga():
 
         loadingAn()
         textAn('Installing Gigafile...')
-        runSh('pip install gigafile==3.2.1)
+        runSh('pip install gigafile==3.2.1')
         clear_output()
         print('Gigafile is Installed!')
         time.sleep(2)
