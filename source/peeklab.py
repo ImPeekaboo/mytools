@@ -271,6 +271,26 @@ def installLX():
         clear_output()
 
 
+def installGiga():
+    import importlib
+    
+    if importlib.util.find_spec("gfile") is None:
+        from IPython.display import clear_output
+        import time, os
+    
+        delete_path = '/content/sample_data'
+        if os.path.exists(delete_path):
+            runSh('rm -rf "/content/sample_data"')
+
+        loadingAn()
+        textAn('Installing Gigafile...')
+        runSh('pip install gigafile==3.2.1)
+        clear_output()
+        print('Gigafile is Installed!')
+        time.sleep(2)
+        clear_output()
+
+
 def uploadConf():
     from google.colab import files
     from IPython.display import clear_output
