@@ -152,7 +152,7 @@ def installRcloneM():
         #runSh('rm -rf rclone')
         runSh('wget https://github.com/divyam234/rclone/releases/latest/download/rclone-v1.64.0-linux-amd64.zip')
         runSh('unzip -q rclone-v1.64.0-linux-amd64.zip')
-        runSh('rclone-v1.64.0-linux-amd64/rclone /usr/bin/ && chmod a+x /usr/bin/rclone')
+        runSh('mv rclone-v1.64.0-linux-amd64/rclone /usr/bin/ && chmod a+x /usr/bin/rclone')
         runSh('rm -rf rclone-*')
         clear_output()
         try:
