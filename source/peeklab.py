@@ -69,6 +69,7 @@ def setupYTA():
         runSh('rm ffmpeg-5.1.1-amd64-static.tar.xz')
         runSh('rm -rf ffmpeg-*-static')
         runSh('wget https://github.com/ImPeekaboo/ytarchive/releases/latest/download/ytarchive_linux_amd64.zip')
+        runSh('unzip -q ytarchive_linux_amd64.zip')
         runSh('mv ytarchive /usr/local/bin/ && chmod a+x /usr/local/bin/ytarchive')
         runSh('rm ytarchive_linux_amd64.zip')
         runSh('pip install yt-dlp')
