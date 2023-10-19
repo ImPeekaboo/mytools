@@ -1,6 +1,6 @@
 
 
-# Colab Tool's Code
+# Colab Tools
 So, this tool is like kinda file downloader and archiver on google colab. There is rclone too, so, you can transfer your files from colab directory to your cloud drive. Need rclone config to make transfer work.
 
 Open notebook here:
